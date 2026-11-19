@@ -1,0 +1,641 @@
+index<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watchman Catholic Charismatic Renewal Movement</title>
+  <style>
+    :root {
+      --navy-dark: #071326;
+      --navy-primary: #0b1f3a;
+      --navy-light: #13315c;
+      --sky-accent: #1d9bf0;
+      --gold-accent: #eab308;
+      --white: #ffffff;
+      --off-white: #f4f7fb;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Navigation & Rotating Logo */
+    header {
+      background-color: var(--navy-dark);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      border-bottom: 2px solid var(--sky-accent);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .rotating-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--sky-accent);
+      box-shadow: 0 0 15px rgba(29, 155, 240, 0.6);
+      animation: spinLogo 16s linear infinite;
+    }
+
+    .rotating-logo:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes spinLogo {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .brand-text h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--white);
+    }
+
+    .brand-text span {
+      font-size: 0.8rem;
+      color: var(--gold-accent);
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--gold-accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 4.5rem 1.5rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(29, 155, 240, 0.2);
+      border: 1px solid var(--sky-accent);
+      color: #bae6fd;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero h2 {
+      font-size: 2.3rem;
+      max-width: 850px;
+      margin: 0 auto 1rem;
+      line-height: 1.25;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      color: #e2e8f0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.85rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background-color: var(--gold-accent);
+      color: var(--navy-dark);
+    }
+
+    .btn-secondary {
+      background-color: var(--sky-accent);
+      color: var(--white);
+    }
+
+    /* Section Base Styling */
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title h3 {
+      font-size: 1.9rem;
+      color: var(--navy-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* GPS Locator Section */
+    .gps-section {
+      background-color: var(--off-white);
+      border-top: 1px solid #cbd5e1;
+      border-bottom: 1px solid #cbd5e1;
+    }
+
+    .gps-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(11, 31, 58, 0.08);
+      border-left: 6px solid var(--navy-primary);
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .gps-controls {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+
+    select {
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 2px solid #cbd5e1;
+      font-size: 1rem;
+      min-width: 250px;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    #gps-status {
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--navy-light);
+    }
+
+    .map-frame {
+      margin-top: 1.5rem;
+      width: 100%;
+      height: 320px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    /* Fellowship Days Section */
+    .fellowship-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .day-card {
+      background: var(--navy-primary);
+      color: var(--white);
+      padding: 1.75rem;
+      border-radius: 12px;
+      border-top: 4px solid var(--gold-accent);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .day-card h4 {
+      color: var(--gold-accent);
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .day-card .time {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.25rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+      color: #bae6fd;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      background-color: var(--off-white);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy-primary);
+    }
+
+    /* Ask a Question & Regional Contacts */
+    .two-col-section {
+      background: var(--navy-dark);
+      color: var(--white);
+    }
+
+    .two-col-section .section-title h3 {
+      color: var(--white);
+    }
+
+    .two-col-section .section-title p {
+      color: #cbd5e1;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .form-box, .contact-box {
+      background: var(--navy-light);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    .contact-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-item h4 {
+      color: var(--gold-accent);
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      background: #040b16;
+      color: #94a3b8;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Rotating Church Logo -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand">
+        <img src="logo.jpg" alt="Watchman Catholic Charismatic Renewal Movement Logo" class="rotating-logo" />
+        <div class="brand-text">
+          <h1>WATCHMAN CATHOLIC CHARISMATIC RENEWAL MOVEMENT</h1>
+          <span>Ezek. 33:1-7 • Isa. 62:6-7</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#locator">GPS Locator</a></li>
+          <li><a href="#fellowship">Fellowship Days</a></li>
+          <li><a href="#gallery">Ministry Gallery</a></li>
+          <li><a href="#questions">Ask a Question</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-badge">Welcome to the House of the Lord</div>
+    <h2>Watchman Catholic Charismatic Renewal Movement</h2>
+    <p>A place where God has placed His Word, His Spirit, His Name, and His Power.</p>
+    <div class="hero-buttons">
+      <a href="#locator" class="btn btn-primary">📍 Locate Nearest Church (GPS)</a>
+      <a href="#fellowship" class="btn btn-secondary">View Fellowship Days</a>
+    </div>
+  </section>
+
+  <!-- GPS Church Locator Section -->
+  <section id="locator" class="gps-section">
+    <div class="container">
+      <div class="section-title">
+        <h3>Live GPS Church Locator</h3>
+        <p>Use your device's GPS to find directions to a Watchman assembly near you, or choose a state/region below.</p>
+      </div>
+
+      <div class="gps-card">
+        <div class="gps-controls">
+          <button onclick="findNearestChurch()" class="btn btn-primary">📡 Use My Live GPS Location</button>
+          <select id="regionSelect" onchange="updateMapByState()">
+            <option value="Watchman Catholic Charismatic Renewal Movement Nigeria">Select State / Region...</option>
+            <option value="Watchman Catholic Charismatic Renewal Movement Abuja FCT">FCT - Abuja</option>
+            <option value="Watchman Catholic Charismatic Renewal Movement Lagos">Lagos State</option>
+            <option value="Watchman Catholic Charismatic Renewal Movement Imo Owerri">Imo State (Owerri)</option>
+            <option value="Watchman Catholic Charismatic Renewal Movement Anambra">Anambra State</option>
+            <option value="Watchman Catholic Charismatic Renewal Movement Rivers Port Harcourt">Rivers State</option>
+            <option value="Watchman Catholic Charismatic Renewal Movement Enugu">Enugu State</option>
+          </select>
+        </div>
+
+        <p id="gps-status">Click "Use My Live GPS Location" to open turn-by-turn navigation from your exact spot.</p>
+
+        <iframe
+          id="churchMap"
+          class="map-frame"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Watchman%20Catholic%20Charismatic%20Renewal%20Movement%20Nigeria&t=&z=6&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fellowship Days Section -->
+  <section id="fellowship">
+    <div class="container">
+      <div class="section-title">
+        <h3>Days of Fellowship</h3>
+        <p>Join us across all regions and states as we gather to worship, pray, and study the undiluted Word of God.</p>
+      </div>
+
+      <div class="fellowship-grid">
+        <div class="day-card">
+          <h4>Sunday Worship Service</h4>
+          <span class="time">Sundays • 8:00 AM</span>
+          <p>Combined worship, choir ministrations, and sound apostolic preaching across all dioceses and parishes.</p>
+        </div>
+
+        <div class="day-card">
+          <h4>Charismatic Hour & Prayer</h4>
+          <span class="time">Tuesdays • 5:00 PM</span>
+          <p>An atmosphere of fervent intercession, spiritual renewal, deliverance, and manifestation of God's power.</p>
+        </div>
+
+        <div class="day-card">
+          <h4>Bible Study & Doctrine</h4>
+          <span class="time">Thursdays • 5:00 PM</span>
+          <p>Systematic exposition of the Scriptures to build faith, holiness, and spiritual maturity.</p>
+        </div>
+
+        <div class="day-card">
+          <h4>Special Programs & Vigils</h4>
+          <span class="time">Monthly & Quarterly</span>
+          <p>3-Day First Fruits Fasting Programme, Night of Metamorphosis, and Hilltop Encounters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ministry Gallery -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-title">
+        <h3>Fellowship & Ministry Moments</h3>
+        <p>Highlights from services, choir ministrations, and special conventions.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="leader1.jpg" alt="7th Night of Metamorphosis" />
+          <div class="gallery-caption">7th Night of Metamorphosis — The Heavens Opened</div>
+        </div>
+        <div class="gallery-item">
+          <img src="leader2.jpg" alt="2nd Combined Service 2026" />
+          <div class="gallery-caption">2nd Combined Service 2026 — Take Back What Is Yours</div>
+        </div>
+        <div class="gallery-item">
+          <img src="choir2.jpg" alt="Combined Service Choir" />
+          <div class="gallery-caption">Voices of Praise — Combined Service Choir</div>
+        </div>
+        <div class="gallery-item">
+          <img src="choir1.jpg" alt="Hilltop Encounters Choir" />
+          <div class="gallery-caption">Hilltop Encounters — Upon This Rock</div>
+        </div>
+        <div class="gallery-item">
+          <img src="congregation.jpg" alt="Congregation Worshipping" />
+          <div class="gallery-caption">Congregation in Prayer & Worship</div>
+        </div>
+        <div class="gallery-item">
+          <img src="pastor1.jpg" alt="Monthly 3 Days First Fruits" />
+          <div class="gallery-caption">Monthly 3-Days First Fruits Fasting Programme</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ask a Question & Regional Contacts -->
+  <section id="questions" class="two-col-section">
+    <div class="container">
+      <div class="section-title">
+        <h3>Questions & Church Contacts</h3>
+        <p>Have a question about our doctrines, prayers, or locating a fellowship center near you? Reach out directly.</p>
+      </div>
+
+      <div class="split-grid">
+        <!-- Question Form -->
+        <div class="form-box">
+          <h4 style="color: var(--gold-accent); margin-bottom: 1rem; font-size: 1.3rem;">Ask a Question About the Church</h4>
+          <form onsubmit="submitQuestion(event)">
+            <div class="form-group">
+              <label for="visitorName">Your Name</label>
+              <input type="text" id="visitorName" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="visitorState">Your State / City</label>
+              <input type="text" id="visitorState" placeholder="e.g., Abuja, Lagos, Owerri" required />
+            </div>
+            <div class="form-group">
+              <label for="visitorQuestion">Your Question or Prayer Request</label>
+              <textarea id="visitorQuestion" rows="4" placeholder="Type your question here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Question via WhatsApp</button>
+          </form>
+        </div>
+
+        <!-- Regional Contacts -->
+        <div id="contacts" class="contact-box">
+          <h4 style="color: var(--gold-accent); margin-bottom: 1rem; font-size: 1.3rem;">Regional & State Contacts</h4>
+          <div class="contact-item">
+            <h4>National / General Inquiries</h4>
+            <p>Phone / WhatsApp: +234 916 261 4045</p>
+          </div>
+          <div class="contact-item">
+            <h4>FCT Abuja Diocese</h4>
+            <p>Contact: Add Abuja Diocesan Coordinator Phone & Address</p>
+          </div>
+          <div class="contact-item">
+            <h4>Lagos & South-West Region</h4>
+            <p>Contact: Add Lagos Regional Phone & Address</p>
+          </div>
+          <div class="contact-item">
+            <h4>South-East & South-South Regions</h4>
+            <p>Contact: Add Imo / Anambra / Rivers Phone & Address</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Watchman Catholic Charismatic Renewal Movement. All Rights Reserved.</p>
+  </footer>
+
+  <!-- GPS & Interactive Scripts -->
+  <script>
+    function findNearestChurch() {
+      const status = document.getElementById("gps-status");
+      const map = document.getElementById("churchMap");
+
+      if (!navigator.geolocation) {
+        status.textContent = "GPS is not supported by your browser. Please select your state from the dropdown.";
+        return;
+      }
+
+      status.textContent = "📡 Acquiring your exact GPS coordinates...";
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          status.innerHTML = `✅ GPS Locked! Showing Watchman assemblies near you. <a href="https://www.google.com/maps/search/Watchman+Catholic+Charismatic+Renewal+Movement/@${lat},${lng},13z" target="_blank" style="color:#1d9bf0; text-decoration:underline;">Open Turn-by-Turn Navigation in Google Maps</a>`;
+          map.src = `https://maps.google.com/maps?q=Watchman%20Catholic%20Charismatic%20Renewal%20Movement&ll=${lat},${lng}&z=13&output=embed`;
+        },
+        () => {
+          status.textContent = "⚠️ Location permission denied. Please enable GPS or select your state from the dropdown menu.";
+        }
+      );
+    }
+
+    function updateMapByState() {
+      const query = encodeURIComponent(document.getElementById("regionSelect").value);
+      document.getElementById("churchMap").src = `https://maps.google.com/maps?q=${query}&t=&z=11&ie=UTF8&iwloc=&output=embed`;
+    }
+
+    function submitQuestion(event) {
+      event.preventDefault();
+      const name = document.getElementById("visitorName").value;
+      const state = document.getElementById("visitorState").value;
+      const question = document.getElementById("visitorQuestion").value;
+      const text = encodeURIComponent(`Hello Watchman Church,\nName: ${name}\nLocation: ${state}\nQuestion: ${question}`);
+      window.open(`https://wa.me/2349162614045?text=${text}`, "_blank");
+    }
+  </script>
+
+</body>
+        </html>
+
+            
+ html
